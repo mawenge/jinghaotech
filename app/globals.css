@@ -4,40 +4,40 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Updated color tokens for professional manufacturing theme */
-  --background: oklch(1 0 0); /* White background */
-  --foreground: oklch(0.35 0 0); /* Dark gray text */
-  --card: oklch(0.98 0 0); /* Light gray card background */
-  --card-foreground: oklch(0.25 0 0); /* Card text color */
-  --popover: oklch(1 0 0); /* Popover background */
-  --popover-foreground: oklch(0.25 0 0); /* Popover text color */
-  --primary: oklch(0.55 0.15 200); /* Cyan-600 primary color */
-  --primary-foreground: oklch(1 0 0); /* White text on primary */
-  --secondary: oklch(0.65 0.18 60); /* Amber-600 accent color */
-  --secondary-foreground: oklch(1 0 0); /* White text on secondary */
-  --muted: oklch(0.98 0 0); /* Muted background */
-  --muted-foreground: oklch(0.45 0 0); /* Muted text color */
-  --accent: oklch(0.65 0.18 60); /* Amber accent color */
-  --accent-foreground: oklch(1 0 0); /* White text on accent */
+  /* 致一科技红色主题颜色方案 */
+  --background: oklch(1 0 0); /* 白色背景 */
+  --foreground: oklch(0.2 0 0); /* 深色文字 */
+  --card: oklch(0.98 0 0); /* 卡片背景 */
+  --card-foreground: oklch(0.2 0 0); /* 卡片文字 */
+  --popover: oklch(1 0 0); /* 弹出层背景 */
+  --popover-foreground: oklch(0.2 0 0); /* 弹出层文字 */
+  --primary: oklch(0.55 0.22 25); /* 红色主色调 */
+  --primary-foreground: oklch(1 0 0); /* 主色上的白色文字 */
+  --secondary: oklch(0.35 0 0); /* 深灰色辅助色 */
+  --secondary-foreground: oklch(1 0 0); /* 辅助色上的白色文字 */
+  --muted: oklch(0.96 0 0); /* 柔和背景 */
+  --muted-foreground: oklch(0.5 0 0); /* 柔和文字 */
+  --accent: oklch(0.6 0.2 25); /* 红色强调色 */
+  --accent-foreground: oklch(1 0 0); /* 强调色上的白色文字 */
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(1 0 0);
-  --border: oklch(0.92 0 0); /* Light border */
-  --input: oklch(0.98 0 0); /* Input background */
-  --ring: oklch(0.55 0.15 200); /* Focus ring color */
-  --chart-1: oklch(0.55 0.15 200);
-  --chart-2: oklch(0.65 0.18 60);
-  --chart-3: oklch(0.45 0 0);
-  --chart-4: oklch(0.6 0.12 300);
-  --chart-5: oklch(0.65 0.2 350);
+  --border: oklch(0.9 0 0); /* 边框颜色 */
+  --input: oklch(0.98 0 0); /* 输入框背景 */
+  --ring: oklch(0.55 0.22 25); /* 焦点环颜色 - 红色 */
+  --chart-1: oklch(0.55 0.22 25); /* 红色 */
+  --chart-2: oklch(0.65 0.18 60); /* 橙色 */
+  --chart-3: oklch(0.45 0 0); /* 灰色 */
+  --chart-4: oklch(0.6 0.15 200); /* 蓝色 */
+  --chart-5: oklch(0.65 0.2 350); /* 粉色 */
   --radius: 0.5rem;
   --sidebar: oklch(0.98 0 0);
-  --sidebar-foreground: oklch(0.25 0 0);
+  --sidebar-foreground: oklch(0.2 0 0);
   --sidebar-primary: oklch(1 0 0);
-  --sidebar-primary-foreground: oklch(0.25 0 0);
-  --sidebar-accent: oklch(0.65 0.18 60);
+  --sidebar-primary-foreground: oklch(0.55 0.22 25);
+  --sidebar-accent: oklch(0.6 0.2 25);
   --sidebar-accent-foreground: oklch(1 0 0);
-  --sidebar-border: oklch(0.92 0 0);
-  --sidebar-ring: oklch(0.55 0.15 200);
+  --sidebar-border: oklch(0.9 0 0);
+  --sidebar-ring: oklch(0.55 0.22 25);
 }
 
 .dark {
