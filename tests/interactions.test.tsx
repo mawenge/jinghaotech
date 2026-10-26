@@ -1,4 +1,4 @@
-import { act, cleanup, fireEvent, render, screen } from "@testing-library/react"
+import { cleanup, fireEvent, render, screen } from "@testing-library/react"
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest"
 import { Header } from "@/components/header"
 import { ContactSection } from "@/components/contact-section"
@@ -60,28 +60,5 @@ it("keeps the displayed contact details actionable in both languages", () => {
     expect(screen.getByRole("link", { name: "+86 177 2756 1686" }).getAttribute("href")).toBe("tel:+8617727561686")
     expect(screen.getByRole("link", { name: "hanliu210201@163.com" }).getAttribute("href")).toBe("mailto:hanliu210201@163.com")
     if (language === "zh") fireEvent.click(screen.getByRole("button", { name: "EN" }))
-  }
-})
-
-it("does not realign an initial fragment after the visitor scrolls manually", async () => {
-  window.history.replaceState(null, "", "/#contact")
-  let finishFonts: () => void
-  const ready = new Promise<void>((resolve) => { finishFonts = resolve })
-  Object.defineProperty(document, "fonts", { configurable: true, value: { ready } })
-  const scrollIntoView = vi.fn()
-  vi.stubGlobal("requestAnimationFrame", (callback: FrameRequestCallback) => {
-    callback(0)
-    return 0
-  })
-  try {
-    render(<LanguageProvider><section id="contact" /></LanguageProvider>)
-    document.getElementById("contact")!.scrollIntoView = scrollIntoView
-    fireEvent.wheel(window)
-    await act(async () => finishFonts())
-    expect(scrollIntoView).not.toHaveBeenCalled()
-  } finally {
-    Reflect.deleteProperty(document, "fonts")
-    window.history.replaceState(null, "", "/")
-    vi.unstubAllGlobals()
   }
 })

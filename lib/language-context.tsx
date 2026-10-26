@@ -14,6 +14,10 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [language, setLanguageState] = useState<Language>('zh')
 
   useEffect(() => {
+    const fragment = window.location.hash.slice(1)
+    const target = document.getElementById(fragment)
+    // Preserve a manual position chosen before hydration restores the saved language.
+    const atNativeLanding = target && Math.abs(target.getBoundingClientRect().top) <= 1
     try {
       const saved = localStorage.getItem('language')
       if (saved === 'zh' || saved === 'en') {
@@ -24,13 +28,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     } catch {
       // The in-memory selection still works when the browser blocks storage.
     }
-  }, [])
-  useEffect(() => {
-    document.documentElement.lang = language === 'zh' ? 'zh-CN' : 'en'
-  }, [language])
-  useEffect(() => {
-    const fragment = window.location.hash.slice(1)
-    if (!fragment) return
+    if (!atNativeLanding) return
     const controller = new window.AbortController()
     const cancel = () => controller.abort()
     for (const event of ['pointerdown', 'keydown', 'wheel', 'touchstart']) {
@@ -47,6 +45,10 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     })
     return cancel
   }, [])
+
+  useEffect(() => {
+    document.documentElement.lang = language === 'zh' ? 'zh-CN' : 'en'
+  }, [language])
 
   const setLanguage = (lang: Language) => {
     setLanguageState(lang)
