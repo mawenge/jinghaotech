@@ -3,6 +3,7 @@
 import { ArrowRight, CheckCircle2 } from "lucide-react"
 import { useLanguage } from "@/lib/language-context"
 import { translations } from "@/lib/translations"
+import { StaticImage } from "@/components/static-image"
 
 export function HeroSection() {
   const { language } = useLanguage()
@@ -55,12 +56,14 @@ export function HeroSection() {
           </div>
 
           <div className="relative">
-            <img
-              src="/images/equipment-aluminum.png"
+            <StaticImage
+              name="equipment-aluminum"
+              priority
+              sizes="(min-width: 1536px) 736px, (min-width: 1024px) 50vw, 100vw"
               alt="CNC精密加工设备"
               className="rounded-lg shadow-2xl w-full"
             />
-            <div className="absolute -bottom-6 -left-6 bg-primary text-primary-foreground p-6 rounded-lg shadow-lg">
+            <div className="absolute -bottom-6 left-0 sm:-left-3 lg:-left-6 bg-primary text-primary-foreground p-6 rounded-lg shadow-lg">
               <div className="text-3xl font-bold">8+</div>
               <div className="text-sm opacity-90">{t.experience}</div>
             </div>

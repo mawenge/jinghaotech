@@ -4,13 +4,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Clock, Shield, DollarSign, Users } from "lucide-react"
 import { useLanguage } from "@/lib/language-context"
 import { translations } from "@/lib/translations"
-
-const valueIcons = {
-  quick: Clock,
-  quality: Shield,
-  price: DollarSign,
-  custom: Users,
-}
+import { StaticImage } from "@/components/static-image"
 
 export function AboutSection() {
   const { language } = useLanguage()
@@ -74,8 +68,9 @@ export function AboutSection() {
               </div>
             </div>
             <div>
-              <img
-                src="/images/equipment-5axis.png"
+              <StaticImage
+                name="equipment-5axis"
+                sizes="(min-width: 1536px) 704px, (min-width: 1024px) 50vw, 100vw"
                 alt={t.workshopAlt}
                 className="rounded-lg shadow-lg w-full"
               />

@@ -54,7 +54,7 @@ export function ContactSection() {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-lg font-semibold">{t.phone.value}</p>
+              <a className="text-lg font-semibold hover:underline" href="tel:+8617727561686">{t.phone.value}</a>
             </CardContent>
           </Card>
 
@@ -66,7 +66,7 @@ export function ContactSection() {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-lg font-semibold">{t.email.value}</p>
+              <a className="text-lg font-semibold hover:underline" href={`mailto:${t.email.value}`}>{t.email.value}</a>
             </CardContent>
           </Card>
 

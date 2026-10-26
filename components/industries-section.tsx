@@ -3,16 +3,17 @@
 import { Card } from "@/components/ui/card"
 import { useLanguage } from "@/lib/language-context"
 import { translations } from "@/lib/translations"
+import { StaticImage } from "@/components/static-image"
 
 export function IndustriesSection() {
   const { language } = useLanguage()
   const t = translations[language].industries
 
   const industries = [
-    { key: 'auto' as const, image: '/images/industry-auto.png' },
-    { key: 'aerospace' as const, image: '/images/industry-aerospace.png' },
-    { key: 'medical' as const, image: '/images/industry-medical.png' },
-    { key: 'electronics' as const, image: '/images/industry-electronics.png' },
+    { key: 'auto' as const, image: 'industry-auto' as const },
+    { key: 'aerospace' as const, image: 'industry-aerospace' as const },
+    { key: 'medical' as const, image: 'industry-medical' as const },
+    { key: 'electronics' as const, image: 'industry-electronics' as const },
   ]
 
   return (
@@ -32,8 +33,9 @@ export function IndustriesSection() {
               <Card key={item.key} className="overflow-hidden hover:shadow-lg transition-shadow">
                 <div className="md:flex">
                   <div className="md:w-2/5 aspect-video md:aspect-square overflow-hidden">
-                    <img
-                      src={item.image}
+                    <StaticImage
+                      name={item.image}
+                      sizes="(min-width: 1536px) 384px, (min-width: 768px) 26vw, 100vw"
                       alt={itemData.title}
                       className="w-full h-full object-cover"
                     />

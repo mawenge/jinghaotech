@@ -2,17 +2,18 @@
 
 import { useLanguage } from "@/lib/language-context"
 import { translations } from "@/lib/translations"
+import { StaticImage } from "@/components/static-image"
 
 export function CaseStudiesSection() {
   const { language } = useLanguage()
   const t = translations[language].cases
 
   const caseStudies = [
-    { key: 'case1' as const, image: '/images/case-01.png' },
-    { key: 'case2' as const, image: '/images/case-02.png' },
-    { key: 'case3' as const, image: '/images/case-03.png' },
-    { key: 'case4' as const, image: '/images/case-04.png' },
-    { key: 'case5' as const, image: '/images/case-05.png' },
+    { key: 'case1' as const, image: 'case-01' as const },
+    { key: 'case2' as const, image: 'case-02' as const },
+    { key: 'case3' as const, image: 'case-03' as const },
+    { key: 'case4' as const, image: 'case-04' as const },
+    { key: 'case5' as const, image: 'case-05' as const },
   ]
 
   return (
@@ -34,8 +35,9 @@ export function CaseStudiesSection() {
                 className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow bg-card"
               >
                 <div className="aspect-[4/3] overflow-hidden">
-                  <img
-                    src={item.image}
+                  <StaticImage
+                    name={item.image}
+                    sizes="(min-width: 1536px) 496px, (min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                     alt={itemData.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />

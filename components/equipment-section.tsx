@@ -3,18 +3,19 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { useLanguage } from "@/lib/language-context"
 import { translations } from "@/lib/translations"
+import { StaticImage } from "@/components/static-image"
 
 export function EquipmentSection() {
   const { language } = useLanguage()
   const t = translations[language].equipment
 
   const equipments = [
-    { key: 'aluminum' as const, image: '/images/equipment-aluminum.png' },
-    { key: 'steel' as const, image: '/images/equipment-steel.png' },
-    { key: 'lathe' as const, image: '/images/equipment-lathe.png' },
-    { key: 'fiveAxis' as const, image: '/images/equipment-5axis.png' },
-    { key: 'cmm' as const, image: '/images/equipment-cmm.png' },
-    { key: 'other' as const, image: '/images/equipment-other.png' },
+    { key: 'aluminum' as const, image: 'equipment-aluminum' as const },
+    { key: 'steel' as const, image: 'equipment-steel' as const },
+    { key: 'lathe' as const, image: 'equipment-lathe' as const },
+    { key: 'fiveAxis' as const, image: 'equipment-5axis' as const },
+    { key: 'cmm' as const, image: 'equipment-cmm' as const },
+    { key: 'other' as const, image: 'equipment-other' as const },
   ]
 
   return (
@@ -33,8 +34,9 @@ export function EquipmentSection() {
             return (
               <Card key={item.key} className="overflow-hidden hover:shadow-lg transition-shadow">
                 <div className="aspect-video overflow-hidden">
-                  <img
-                    src={item.image}
+                  <StaticImage
+                    name={item.image}
+                    sizes="(min-width: 1536px) 496px, (min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                     alt={itemData.title}
                     className="w-full h-full object-cover"
                   />
