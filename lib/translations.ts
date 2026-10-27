@@ -164,7 +164,7 @@ export const translations = {
     // Contact
     contact: {
       title: '联系我们',
-      description: '期待与您合作，为您提供专业的精密加工服务',
+      description: '期待与您合作，共创辉煌明天',
       company: { label: '公司名称', name: '深圳市致以科技有限公司', en: 'Shenzhen Zhiyi Technology Co., Ltd' },
       contact: { label: '联系人', name: '石华凤', en: 'Shi Huafeng' },
       phone: { label: '电话', value: '+86 177 2756 1686' },
