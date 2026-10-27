@@ -1,5 +1,6 @@
 name = "jinghaotech"
 compatibility_date = "2024-01-01"
 
+# Build the static export before deployment; no Worker script is required.
 [assets]
 directory = "./out"
