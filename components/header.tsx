@@ -48,6 +48,9 @@ export function Header() {
               size="sm"
               className="lg:hidden bg-transparent"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label={language === 'zh' ? '切换导航菜单' : 'Toggle navigation menu'}
+              aria-expanded={mobileMenuOpen}
+              aria-controls="mobile-navigation"
             >
               <Menu className="h-4 w-4" />
             </Button>
@@ -55,22 +58,20 @@ export function Header() {
         </div>
 
         {/* 移动端菜单 */}
-        {mobileMenuOpen && (
-          <div className="lg:hidden py-4 border-t border-border">
-            <nav className="flex flex-col space-y-4">
-              {navItems.map((item) => (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  className="text-foreground hover:text-primary transition-colors"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {item.name}
-                </a>
-              ))}
-            </nav>
-          </div>
-        )}
+        <div id="mobile-navigation" hidden={!mobileMenuOpen} className="lg:hidden py-4 border-t border-border">
+          <nav className="flex flex-col space-y-4">
+            {navItems.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                className="text-foreground hover:text-primary transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {item.name}
+              </a>
+            ))}
+          </nav>
+        </div>
       </div>
     </header>
   )

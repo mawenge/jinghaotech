@@ -5,15 +5,6 @@ import { Users, Clock, Target, Shield, Calendar, HeadphonesIcon } from "lucide-r
 import { useLanguage } from "@/lib/language-context"
 import { translations } from "@/lib/translations"
 
-const advantageIcons = {
-  oneOnOne: Users,
-  quickQuote: Clock,
-  precision: Target,
-  quality: Shield,
-  delivery: Calendar,
-  support: HeadphonesIcon,
-}
-
 export function AdvantagesSection() {
   const { language } = useLanguage()
   const t = translations[language].advantages

@@ -1,0 +1,145 @@
+{
+  "equipment-aluminum": {
+    "width": 640,
+    "height": 498,
+    "widths": [
+      320,
+      640,
+      960,
+      962
+    ]
+  },
+  "equipment-steel": {
+    "width": 640,
+    "height": 498,
+    "widths": [
+      320,
+      640,
+      960,
+      962
+    ]
+  },
+  "equipment-lathe": {
+    "width": 640,
+    "height": 498,
+    "widths": [
+      320,
+      640,
+      960,
+      962
+    ]
+  },
+  "equipment-5axis": {
+    "width": 640,
+    "height": 498,
+    "widths": [
+      320,
+      640,
+      960,
+      962
+    ]
+  },
+  "equipment-cmm": {
+    "width": 640,
+    "height": 498,
+    "widths": [
+      320,
+      640,
+      960,
+      962
+    ]
+  },
+  "equipment-other": {
+    "width": 640,
+    "height": 848,
+    "widths": [
+      320,
+      640,
+      960,
+      1064
+    ]
+  },
+  "industry-auto": {
+    "width": 640,
+    "height": 498,
+    "widths": [
+      320,
+      640,
+      960,
+      962
+    ]
+  },
+  "industry-aerospace": {
+    "width": 640,
+    "height": 498,
+    "widths": [
+      320,
+      640,
+      960,
+      962
+    ]
+  },
+  "industry-medical": {
+    "width": 640,
+    "height": 556,
+    "widths": [
+      320,
+      640,
+      960,
+      1122
+    ]
+  },
+  "industry-electronics": {
+    "width": 640,
+    "height": 513,
+    "widths": [
+      320,
+      640,
+      960,
+      1014
+    ]
+  },
+  "case-01": {
+    "width": 640,
+    "height": 480,
+    "widths": [
+      320,
+      640,
+      732
+    ]
+  },
+  "case-02": {
+    "width": 441,
+    "height": 331,
+    "widths": [
+      320,
+      441
+    ]
+  },
+  "case-03": {
+    "width": 438,
+    "height": 329,
+    "widths": [
+      320,
+      438
+    ]
+  },
+  "case-04": {
+    "width": 536,
+    "height": 402,
+    "widths": [
+      320,
+      536
+    ]
+  },
+  "case-05": {
+    "width": 640,
+    "height": 480,
+    "widths": [
+      320,
+      640,
+      960,
+      1280
+    ]
+  }
+}

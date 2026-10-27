@@ -2,12 +2,12 @@ import type React from "react"
 import type { Metadata } from "next"
 import { GeistSans } from "geist/font/sans"
 import { GeistMono } from "geist/font/mono"
-import { Analytics } from "@vercel/analytics/next"
-import { Suspense } from "react"
 import { LanguageProvider } from "@/lib/language-context"
+import { siteUrl } from "@/lib/site"
 import "./globals.css"
 
 export const metadata: Metadata = {
+  metadataBase: siteUrl,
   title: "致以科技 - 专业高效 · 专注CNC加工领域",
   description:
     "深圳市致以科技有限公司是一家ISO9001认证的专业CNC加工制造商，提供精密零件加工、快速原型制作和小批量生产服务。24小时快速报价，品质保证，价格透明。",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "zh_CN",
-    url: "http://www.hrtstooling.com/",
+    url: siteUrl,
     siteName: "致以科技",
     title: "致以科技 - 专业高效 · 专注CNC加工领域",
     description:
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     images: ["/images/twitter-image.jpg"],
   },
   alternates: {
-    canonical: "http://www.hrtstooling.com/",
+    canonical: siteUrl,
   },
   generator: "v0.app",
 }
@@ -79,10 +79,10 @@ export default function RootLayout({
   return (
     <html lang="zh-CN">
       <head>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.ico" sizes="32x32" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.jpg" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.jpg" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.jpg" />
+        <link rel="icon" type="image/jpeg" sizes="32x32" href="/favicon-32x32.jpg" />
+        <link rel="icon" type="image/jpeg" sizes="16x16" href="/favicon-16x16.jpg" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -91,8 +91,8 @@ export default function RootLayout({
               "@type": "Organization",
               name: "深圳市致以科技有限公司",
               alternateName: "致以科技",
-              url: "http://www.hrtstooling.com/",
-              logo: "http://www.hrtstooling.com/images/logo.png",
+              url: siteUrl.href,
+              logo: new URL("/apple-touch-icon.jpg", siteUrl).href,
               description:
                 "深圳市致以科技有限公司是一家ISO9001认证的专业CNC加工制造商，提供精密零件加工、快速原型制作和小批量生产服务。快速响应，品质保证，价格透明，按需生产。",
               foundingDate: "2016",
@@ -111,7 +111,7 @@ export default function RootLayout({
                 email: "hanliu210201@163.com",
                 availableLanguage: ["Chinese", "English"],
               },
-              sameAs: ["http://www.hrtstooling.com/"],
+              sameAs: [siteUrl.href],
               hasCredential: [
                 {
                   "@type": "EducationalOccupationalCredential",
@@ -156,15 +156,14 @@ export default function RootLayout({
                   },
                 },
               ],
-            }),
+            }).replace(/</g, "\\u003c"),
           }}
         />
       </head>
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
         <LanguageProvider>
-          <Suspense fallback={null}>{children}</Suspense>
+          {children}
         </LanguageProvider>
-        <Analytics />
       </body>
     </html>
   )
